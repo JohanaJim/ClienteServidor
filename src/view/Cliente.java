@@ -30,7 +30,7 @@ public class Cliente {
 			bd.guardaMsg("INSERT INTO SOCKET (SK_MENSAGEM)" + "VALUES ('Cliente: "+textoEnviado +"')");
 
 			// envia a linha para o server
-			clienteParaServidor.writeBytes(textoEnviado + "HOLA MUNDO\n");
+			clienteParaServidor.writeBytes(textoEnviado + "HOLA VERO COMO ESTAS?\n");
 
 			// l� uma linha do server
 			textoServidor = cadeiaServidor.readLine();
