@@ -11,38 +11,37 @@ public class Servidor {
 	public static void main(String[] args) throws Exception {
 		String textoCliente;
 		String textoEnvio;
-		
-		// cria socket de comunicação com os clientes na porta 6789
+
+		// cria socket de comunicaï¿½ï¿½o com os clientes na porta 6789
 		@SuppressWarnings("resource")
 		ServerSocket bemVindoSocket = new ServerSocket (6789);
-		
-		// espera mensagem de algum cliente e trata
-		
-            // cria o strem do teclado
-            
-			BufferedReader cadeiaServidor = new BufferedReader(new InputStreamReader(System.in)); 
 
-			//espera a conexão de algum cliente
+		// espera mensagem de algum cliente e trata
+
+            // cria o strem do teclado
+
+			BufferedReader cadeiaServidor = new BufferedReader(new InputStreamReader(System.in));
+
+			//espera a conexï¿½o de algum cliente
 			Socket conexaoSocket = bemVindoSocket.accept();
-			
+
 			//cria strem de entra e saida com cliente que chegou
 			BufferedReader cadeiaCliente = new BufferedReader(new InputStreamReader(conexaoSocket.getInputStream()));
             DataOutputStream ServidorParaCliente = new DataOutputStream(conexaoSocket.getOutputStream());
-			
+
 			while(true) {
-                // lê uma linha do cliente
+                // lï¿½ uma linha do cliente
                 textoCliente = cadeiaCliente.readLine();
                 System.out.println("Do cliente: " + textoCliente);
-                
+
                 // envia pro cliente
-                System.out.print("Server: ");
+                System.out.print("Server: Este es una modificacÃ²n ");
                 textoEnvio = cadeiaServidor.readLine();
                 ServidorParaCliente.writeBytes(textoEnvio + "\n");
 		    }
-		
-		
-		
-	}
-	
-}
 
+
+
+	}
+
+}
